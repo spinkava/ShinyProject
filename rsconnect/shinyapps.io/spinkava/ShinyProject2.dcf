@@ -1,0 +1,12 @@
+name: ShinyProject2
+title: ShinyProject2
+username:
+account: spinkava
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 422077
+bundleId: 1571350
+url: https://spinkava.shinyapps.io/ShinyProject2/
+when: 1536177234.86448
+asMultiple: FALSE
+asStatic: FALSE
