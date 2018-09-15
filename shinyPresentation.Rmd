@@ -1,0 +1,76 @@
+---
+title: "Shiny Presentation"
+author: "Samuel Pinkava"
+date: "September 15, 2018"
+output: ioslides_presentation
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+##Shiny Project
+
+This Shiny app will place random markers around various cities around the world.
+
+Select the city from the dropdown menu and then click on "New Points." You will
+then get a map of random points from around that city.
+
+##Baltimore
+
+Suppose you want to randomly place geocaches around Baltimore.
+
+```{r}
+library(leaflet)
+
+r_colors <- rgb(t(col2rgb(colors()) / 255))
+names(r_colors) <- colors()
+
+points <- cbind(rnorm(10)/4 - 76.6122, rnorm(10)/8 + 39.2904)
+
+p <-leaflet() %>%
+      addProviderTiles(providers$Stamen.TonerLite,
+        options = providerTileOptions(noWrap = TRUE)
+      ) %>%
+      addMarkers(lng = points[,1],lat = points[,2])
+p
+```
+
+##London
+
+You can set up corner shops randomly around London.
+
+```{r}
+library(leaflet)
+
+r_colors <- rgb(t(col2rgb(colors()) / 255))
+names(r_colors) <- colors()
+
+points <- cbind(rnorm(10)/4 - 0.1278, rnorm(10)/8 + 51.5074)
+
+p <-leaflet() %>%
+      addProviderTiles(providers$Stamen.TonerLite,
+        options = providerTileOptions(noWrap = TRUE)
+      ) %>%
+      addMarkers(lng = points[,1],lat = points[,2])
+p
+```
+
+##Kathmandu
+
+You may want to create random camp sites around Kathmandu.
+
+```{r}
+library(leaflet)
+
+r_colors <- rgb(t(col2rgb(colors()) / 255))
+names(r_colors) <- colors()
+
+points <- cbind(rnorm(10)/4 + 85.3240, rnorm(10)/8 + 27.7172)
+
+p <-leaflet() %>%
+      addProviderTiles(providers$Stamen.TonerLite,
+        options = providerTileOptions(noWrap = TRUE)
+      ) %>%
+      addMarkers(lng = points[,1],lat = points[,2])
+p
+```
